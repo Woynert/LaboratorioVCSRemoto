@@ -3,10 +3,17 @@
 a = float(input("Ingrese el numero a --> "))
 b = float(input("Ingrese el numero b --> "))
 c = float(input("Ingrese el numero c --> "))
-d = float(input("Ingrese el numero d --> "))
 
-print("\nEl producto entre a y d es de: ",(a*c))
-print("Ya demás el doble de a es de: ",(2*a))
+d = (b**2)-4*a*c
 
-print("El cuadrado de b es de: ",(b*b))
-print("La raiz de d es de: ",d**(1/2))
+if (d > 0):
+    x1 = (-b+(d**(1/2)))/(2*a)
+    x2 = (-b-(d**(1/2)))/(2*a)
+    print("Solución\nx1 = ",x1,"\nx2 = ",x2)
+elif (d == 0):
+    x1 = (-b)/(2*a)
+    print("Solución\nx1 = ",x1)
+elif (d < 0):
+    print("No existe una solución que esté dentro de los numeros reales")
+    
+
