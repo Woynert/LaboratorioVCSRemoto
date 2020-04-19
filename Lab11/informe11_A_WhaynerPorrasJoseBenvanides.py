@@ -83,7 +83,34 @@ def mejor_mes(arr):
                 besto = j
         print("El mejor mes de", citys[i], "fué", monthsW[besto])
     
-
+#Imprimir rango de meses
+def imprimir_personalizado(arr, stt, end):
+    
+    txt = ""
+    #indicadores
+    for j in range(stt, end):
+        txt += months[j]+ " | "
+    print(txt, "\n")
+    
+    #datos
+    for i in range(0, 4):
+        txt = ""
+        for j in range(stt, end):
+            
+            txt += str(arr[i,j])
+            
+            #acomodar espacios
+            if (arr[i,j] >= 100) or (arr[i,j] <= -10):
+                txt += "   "
+            elif (arr[i,j] >= 10) or (arr[i,j] >= -10) and (arr[i,j] < 0) :
+                txt += "    "
+            else:
+                txt += "     "
+                
+        print(txt + citys[i])
+    print("\n")
+        
+        
 #crear valores
 ingresos = generador(100, 180)
 egresos = generador(60, 130)
@@ -102,4 +129,9 @@ imprimir(ganancias)
 #mejor/peor ciudad/mes
 #mejor_ciudad(ganancias)
 #peor_ciudad(ganancias)
-mejor_mes(ganancias)
+#mejor_mes(ganancias)
+
+#imprimir rango de meses
+imprimir_personalizado(ingresos, 3, 6)
+
+
