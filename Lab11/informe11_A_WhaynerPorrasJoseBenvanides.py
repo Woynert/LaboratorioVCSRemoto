@@ -13,8 +13,21 @@ def imprimir(arr):
     for i in range(0, 4):
         txt = ""
         for j in range(0, 12):
-            txt += str(arr[i,j])+"   "
+            
+            txt += str(arr[i,j])
+            if (arr[i,j] >= 100):
+                txt += "   "
+            else:
+                txt += "    "
         print(txt + citys[i])
+    print("\n")
     
+#Crear valores
 ingresos = generador(100, 180)
 egresos = generador(60, 130)
+
+#Imprimir valores
+print("INGRESOS")
+imprimir(ingresos)
+print("EGRESOS")
+imprimir(egresos)
