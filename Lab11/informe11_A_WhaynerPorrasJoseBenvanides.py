@@ -1,8 +1,5 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Sun Apr 19 11:21:48 2020
+import numpy as np
 
-@author: Woynert
-"""
-
+def generador(_min, _max):
+    return(np.random.randint(_min, _max, size = 64).reshape(4, 16))
 
