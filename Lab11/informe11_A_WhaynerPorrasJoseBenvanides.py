@@ -2,6 +2,8 @@ import numpy as np
 
 
 citys = np.array(["Bucaramanga", "Floridablanca", "Girón", "Piedecuesta"])
+months = np.array(["Ene" , "Feb", "Mar", "Abr", "May", "Jun", "Jul", "Ago", "Sep", "Oct", "Nov", "Dic"])
+monthsW = np.array(["Enero" , "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"])
 
 #generar arrays
 def generador(_min, _max):
@@ -10,8 +12,11 @@ def generador(_min, _max):
 #imprimir array
 def imprimir(arr):
     
+    txt = ""
     #indicadores
-    print("Ene | Feb | Mar | Abr | May | Jun | Jul | Ago | Sep | Oct | Nov | Dic\n")
+    for j in range(0, 12):
+        txt += months[j]+ " | "
+    print(txt, "\n")
     
     #datos
     for i in range(0, 4):
@@ -66,6 +71,19 @@ def peor_ciudad(arr):
             peor = i
     print("La ciudad con peores ganancias fué:\n", citys[peor], "\nCon ganancias de:",str(peorGan)+"M COP\n")
        
+#mejor mes de cada ciudad
+def mejor_mes(arr):
+    
+    besto = 0;
+    for i in range(0, 4):
+        gan = -1000;
+        for j in range(0, 12):
+            if arr[i, j] > gan:
+                gan = arr[i, j]
+                besto = j
+        print("El mejor mes de", citys[i], "fué", monthsW[besto])
+    
+
 #crear valores
 ingresos = generador(100, 180)
 egresos = generador(60, 130)
@@ -81,6 +99,7 @@ print("GANANCIAS")
 ganancias = calculador(ingresos, egresos)
 imprimir(ganancias)
 
-#mejor/peor ciudad
-mejor_ciudad(ganancias)
-peor_ciudad(ganancias)
+#mejor/peor ciudad/mes
+#mejor_ciudad(ganancias)
+#peor_ciudad(ganancias)
+mejor_mes(ganancias)
