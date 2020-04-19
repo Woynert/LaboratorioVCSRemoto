@@ -1,8 +1,10 @@
 import numpy as np
 
+#generar arrays
 def generador(_min, _max):
     return(np.random.randint(_min, _max, size = 48).reshape(4, 12))
 
+#imprimir array
 def imprimir(arr):
     
     #indicadores
@@ -15,19 +17,30 @@ def imprimir(arr):
         for j in range(0, 12):
             
             txt += str(arr[i,j])
-            if (arr[i,j] >= 100):
+            
+            #acomodar espacios
+            if (arr[i,j] >= 100) or (arr[i,j] <= -10):
                 txt += "   "
-            else:
+            elif (arr[i,j] >= 10) or (arr[i,j] >= -10) and (arr[i,j] < 0) :
                 txt += "    "
+            else:
+                txt += "     "
+                
         print(txt + citys[i])
     print("\n")
     
-#Crear valores
+#restar arrays
+def calculador(arrA, arrB):
+    arrR = arrA - arrB
+    return arrR
+    
+#crear valores
 ingresos = generador(100, 180)
 egresos = generador(60, 130)
 
-#Imprimir valores
+#imprimir valores
 print("INGRESOS")
 imprimir(ingresos)
 print("EGRESOS")
 imprimir(egresos)
+
