@@ -43,4 +43,5 @@ print("INGRESOS")
 imprimir(ingresos)
 print("EGRESOS")
 imprimir(egresos)
-
+print("GANANCIAS")
+imprimir(calculador(ingresos, egresos))
