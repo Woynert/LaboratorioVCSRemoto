@@ -36,7 +36,7 @@ def calculador(arrA, arrB):
     arrR = arrA - arrB
     return arrR
     
-#
+#más ganancias
 def mejor_ciudad(arr):
     
     mejor = 0; #por defecto
@@ -45,27 +45,42 @@ def mejor_ciudad(arr):
     for i in range(0, 4):
         gan = 0;
         for j in range(0, 12):
-            gan += arr[i, j];
+            gan += arr[i, j]
         if gan > mejorGan:
             mejorGan = gan
-            mejor = i;
-    print("La ciudad con mejores ganancias fué:\n", citys[mejor], "\nCon ganancias de:",str(mejorGan)+"M COP")
+            mejor = i
+    print("La ciudad con mejores ganancias fué:\n", citys[mejor], "\nCon ganancias de:",str(mejorGan)+"M COP\n")
             
-
+#menos ganancias
+def peor_ciudad(arr):
+    
+    peor = 0; 
+    peorGan = 10000; #valor imposible
+    
+    for i in range(0, 4):
+        gan = 0;
+        for j in range(0, 12):
+            gan += arr[i, j]
+        if gan < peorGan:
+            peorGan = gan
+            peor = i
+    print("La ciudad con peores ganancias fué:\n", citys[peor], "\nCon ganancias de:",str(peorGan)+"M COP\n")
+       
 #crear valores
 ingresos = generador(100, 180)
 egresos = generador(60, 130)
 
 #imprimir valores
-print("INGRESOS")
-imprimir(ingresos)
+#print("INGRESOS")
+#imprimir(ingresos)
 
-print("EGRESOS")
-imprimir(egresos)
+#print("EGRESOS")
+#imprimir(egresos)
 
 print("GANANCIAS")
 ganancias = calculador(ingresos, egresos)
 imprimir(ganancias)
 
-#mejor ciudad
+#mejor/peor ciudad
 mejor_ciudad(ganancias)
+peor_ciudad(ganancias)
