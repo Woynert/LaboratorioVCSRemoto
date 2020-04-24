@@ -28,7 +28,7 @@ def imprimir(arr):
             #acomodar espacios
             if (arr[i,j] >= 100) or (arr[i,j] <= -10):
                 txt += "   "
-            elif (arr[i,j] >= 10) or (arr[i,j] >= -10) and (arr[i,j] < 0) :
+            elif (arr[i,j] >= 10) or (arr[i,j] >= -10) and (arr[i,j] < 0):
                 txt += "    "
             else:
                 txt += "     "
@@ -102,7 +102,7 @@ def imprimir_personalizado(arr, stt, end):
             #acomodar espacios
             if (arr[i,j] >= 100) or (arr[i,j] <= -10):
                 txt += "   "
-            elif (arr[i,j] >= 10) or (arr[i,j] >= -10) and (arr[i,j] < 0) :
+            elif (arr[i,j] >= 10) or (arr[i,j] >= -10) and (arr[i,j] < 0):
                 txt += "    "
             else:
                 txt += "     "
@@ -122,9 +122,9 @@ egresos = generador(60, 130)
 #print("EGRESOS")
 #imprimir(egresos)
 
-print("GANANCIAS")
+#print("GANANCIAS")
 ganancias = calculador(ingresos, egresos)
-imprimir(ganancias)
+#imprimir(ganancias)
 
 #mejor/peor ciudad/mes
 #mejor_ciudad(ganancias)
