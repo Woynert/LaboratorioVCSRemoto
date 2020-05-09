@@ -69,9 +69,6 @@ def loteria(lista1, lista2):
                 return(premiumCopy[i])
     else:
         return(None)
-
-cont = 0
-found = False
     
 #imprimir(cartas)
 #imprimir(premium)
@@ -207,23 +204,3 @@ for i in range(0, len(listLetCant)):
     txt += str(listLetCant[i]) + " : " + str(round(listLetCant[i][1] / acum * 100, 2)) + " %\n"
 print(txt)       
 
-
-
-"""
-
-
-print("Repeticiones: ", cont)
-imprimir(jugador)
-imprimir(sobre_uno)
-imprimir(sobre_dos)
-imprimir(sobre_tres)
-imprimir(subJuego)
-imprimir(paquete)
-print(newCard)
-
-
-sobre_dos = [""]
-sobre_tres = [""]
-sobre_uno
-sobre_dos
-sobre_tres"""
